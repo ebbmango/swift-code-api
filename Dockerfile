@@ -11,4 +11,4 @@ COPY src/ ./src/
 
 EXPOSE 8080
 
-CMD ["run", "--allow-net", "--allow-read", "src/app.ts"]
+CMD ["run", "--allow-net", "--allow-read", "--allow-write", "src/app.ts"]
