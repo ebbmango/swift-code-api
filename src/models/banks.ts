@@ -1,13 +1,14 @@
-import countryCodes from "../constants/countries-iso2.json" with { type: "json" };
+import { countryCodes } from "../constants/countries-iso2.ts";
 
 type CountryISO2 = keyof typeof countryCodes;
+type CountryName = typeof countryCodes[CountryISO2];
 
 interface Bank {
   swiftCode: string;
   bankName: string;
   address: string;
   countryISO2: CountryISO2;
-  countryName: string;
+  countryName: CountryName;
   isHeadquarter: boolean;
 }
 
@@ -20,4 +21,4 @@ interface Headquarter extends Bank {
   branches: Branch[];
 }
 
-export type { CountryISO2, Branch, Headquarter };
+export type { CountryISO2, CountryName, Branch, Headquarter };

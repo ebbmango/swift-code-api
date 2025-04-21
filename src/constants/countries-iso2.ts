@@ -1,4 +1,4 @@
-{
+export const countryCodes = {
     "AF": "AFGHANISTAN",
     "AL": "ALBANIA",
     "DZ": "ALGERIA",
@@ -248,4 +248,4 @@
     "ZM": "ZAMBIA",
     "ZW": "ZIMBABWE",
     "AX": "ÅLAND ISLANDS"
-}
+} as const;
