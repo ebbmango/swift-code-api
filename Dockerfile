@@ -11,4 +11,6 @@ COPY src/ ./src/
 
 EXPOSE 8080
 
-CMD ["run", "--allow-net", "--allow-read", "--allow-write", "src/app.ts"]
+RUN mkdir -p /app/data
+
+CMD ["deno", "run", "--allow-net", "--allow-read", "--allow-write", "src/app.ts"]

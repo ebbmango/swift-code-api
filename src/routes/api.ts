@@ -6,12 +6,12 @@ import {
   getSwiftCode,
 } from "../controllers/swift.ts";
 
-const swiftRoutes = new Hono();
+const routes = new Hono();
 
-swiftRoutes.get("/", (c) => c.text("Hello, World!"));
-swiftRoutes.get("/v1/swift-codes/:swiftCode", getSwiftCode);
-swiftRoutes.get("/v1/swift-codes/country/:ISO2code", getByCountry);
-swiftRoutes.post("/v1/swift-codes", createSwiftCode);
-swiftRoutes.delete("/v1/swift-codes/:swiftCode", deleteSwiftCode);
+routes.get("/", (c) => c.text("Hello, World!"));
+routes.get("/v1/swift-codes/:swiftCode", getSwiftCode);
+routes.get("/v1/swift-codes/country/:ISO2code", getByCountry);
+routes.post("/v1/swift-codes", createSwiftCode);
+routes.delete("/v1/swift-codes/:swiftCode", deleteSwiftCode);
 
-export default swiftRoutes;
+export default routes;

@@ -1,12 +1,9 @@
 import { Hono } from "jsr:@hono/hono";
-import { DatabaseSync } from "node:sqlite";
-import swiftRoutes from "./routes/api.ts";
+import routes from "./routes/api.ts";
+import { startDatabase } from "./database/db.ts";
 
 const app = new Hono();
-app.route("/", swiftRoutes);
+app.route("/", routes);
 
-const db = new DatabaseSync("test.db");
-db.close();
-
-
+await startDatabase();
 Deno.serve({ port: 8080 }, app.fetch);

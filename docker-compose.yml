@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  swift-code-api:
+    build:
+      context: .
+    container_name: swift-code-api-container
+    ports:
+      - "8080:8080"
+    init: true
