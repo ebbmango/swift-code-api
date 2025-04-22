@@ -12,8 +12,7 @@ CREATE TABLE
     bank_address TEXT NOT NULL,
     swift_code TEXT NOT NULL UNIQUE,
     is_headquarter BOOLEAN NOT NULL,
+    -- foreign keys
     country_id INTEGER NOT NULL,
-    headquarter_id INTEGER,
     FOREIGN KEY (country_id) REFERENCES countries (id),
-    FOREIGN KEY (headquarter_id) REFERENCES banks (id)
   );
